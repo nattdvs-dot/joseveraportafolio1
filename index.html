@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>José Vera (@josevera_22) — Portafolio de Producción y Edición de Video</title>
+  <style>
+    :root {
+      --bg-primary: #090b10;
+      --bg-secondary: #11151f;
+      --bg-card: #161b28;
+      --bg-card-hover: #1e2536;
+      --surface-glass: rgba(22, 27, 40, 0.78);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-highlight: rgba(245, 158, 11, 0.45);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-amber: #f59e0b;
+      --accent-amber-soft: rgba(245, 158, 11, 0.14);
+      --accent-cyan: #38bdf8;
+      --accent-cyan-soft: rgba(56, 189, 248, 0.14);
+      --accent-emerald: #10b981;
+      --accent-rose: #f43f5e;
+      --accent-purple: #a855f7;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-primary);
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(245, 158, 11, 0.08), transparent 35%),
+        radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.07), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.05), transparent 45%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Sticky Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(9, 11, 16, 0.82);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.9rem 1.5rem;
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-amber), #d97706);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #090b10;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+    }
+
+    .brand-text h1 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      font-size: 0.78rem;
+      color: var(--accent-amber);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--text-primary);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-amber), #d97706);
+      color: #090b10;
+      font-weight: 700;
+      font-size: 0.86rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.42);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.55rem 1.05rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-amber);
+      background: var(--accent-amber-soft);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      background: var(--accent-amber-soft);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--accent-amber);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      margin-bottom: 1rem;
+    }
+
+    .hero h2 .highlight {
+      background: linear-gradient(90deg, #f59e0b, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+      max-width: 640px;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .drive-folders-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .folder-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      transition: all 0.2s;
+    }
+
+    .folder-chip:hover {
+      color: var(--text-primary);
+      border-color: var(--accent-cyan);
+      background: var(--accent-cyan-soft);
+    }
+
+    /* Stats Card in Hero */
+    .hero-stats-card {
+      background: linear-gradient(160deg, rgba(22, 27, 40, 0.95), rgba(15, 19, 29, 0.95));
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-stats-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-amber), var(--accent-cyan), var(--accent-purple));
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .profile-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f59e0b, #38bdf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #090b10;
+      flex-shrink: 0;
+    }
+
+    .profile-meta h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .profile-meta p {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+    }
+
+    .stat-number {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* Controls Bar: Tabs, Search & Sort */
+    .controls-section {
+      margin: 1.5rem 0 2rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+    }
+
+    .tabs-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .tab-btn {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.18s;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .tab-btn.active {
+      background: var(--accent-amber);
+      color: #090b10;
+      border-color: var(--accent-amber);
+      box-shadow: 0 2px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .tab-count {
+      font-size: 0.72rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.2);
+      font-weight: 700;
+    }
+
+    .tab-btn:not(.active) .tab-count {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-secondary);
+    }
+
+    .filters-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .search-wrapper {
+      flex: 1;
+      min-width: 240px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      padding: 0.65rem 1rem 0.65rem 2.4rem;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-amber);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .niche-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .niche-pill {
+      font-size: 0.76rem;
+      padding: 0.38rem 0.75rem;
+      border-radius: 8px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+
+    .niche-pill:hover, .niche-pill.active {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      background: var(--accent-cyan-soft);
+    }
+
+    .sort-select {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      padding: 0.6rem 0.9rem;
+      border-radius: var(--radius-md);
+      font-size: 0.84rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Portfolio Grid */
+    .results-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.35rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .video-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+      box-shadow: var(--shadow-card);
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-highlight);
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.75);
+    }
+
+    .card-thumb {
+      height: 185px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .thumb-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.88;
+      transition: transform 0.35s ease;
+    }
+
+    .video-card:hover .thumb-bg {
+      transform: scale(1.06);
+    }
+
+    .play-overlay {
+      position: relative;
+      z-index: 2;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(9, 11, 16, 0.78);
+      border: 2px solid var(--accent-amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-amber);
+      font-size: 1.25rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-card:hover .play-overlay {
+      background: var(--accent-amber);
+      color: #090b10;
+      transform: scale(1.1);
+    }
+
+    .card-badges-top {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      right: 0.75rem;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.4rem;
+      pointer-events: none;
+    }
+
+    .platform-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      backdrop-filter: blur(8px);
+      background: rgba(9, 11, 16, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fff;
+    }
+
+    .platform-badge.youtube {
+      background: rgba(220, 38, 38, 0.88);
+      border-color: rgba(248, 113, 113, 0.4);
+    }
+
+    .platform-badge.instagram {
+      background: linear-gradient(135deg, rgba(192, 38, 211, 0.88), rgba(244, 63, 94, 0.88));
+    }
+
+    .platform-badge.drive {
+      background: rgba(16, 185, 129, 0.85);
+      color: #052e16;
+    }
+
+    .size-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.22rem 0.55rem;
+      border-radius: 6px;
+      background: rgba(9, 11, 16, 0.8);
+      color: var(--text-secondary);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card-body {
+      padding: 1.15rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-category {
+      font-size: 0.73rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-cyan);
+      margin-bottom: 0.35rem;
+    }
+
+    .card-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.45rem;
+      line-height: 1.35;
+    }
+
+    .card-desc {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    .card-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border-subtle);
+      margin-bottom: 0.85rem;
+    }
+
+    .card-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.55rem;
+    }
+
+    .card-btn {
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: all 0.18s;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .card-btn.preview {
+      background: var(--accent-amber-soft);
+      color: var(--accent-amber);
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+
+    .card-btn.preview:hover {
+      background: var(--accent-amber);
+      color: #090b10;
+    }
+
+    .card-btn.external {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-primary);
+    }
+
+    .card-btn.external:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .section-header h3 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    /* Pricing & Packages Section */
+    .pricing-section {
+      margin: 3.5rem 0;
+      padding: 2.25rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.15rem;
+      margin-top: 1.5rem;
+    }
+
+    .price-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .price-card.featured {
+      border-color: var(--accent-amber);
+      background: linear-gradient(180deg, rgba(245, 158, 11, 0.09), var(--bg-card));
+    }
+
+    .price-badge {
+      position: absolute;
+      top: -11px;
+      right: 16px;
+      background: var(--accent-amber);
+      color: #090b10;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    .price-PackName {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+    }
+
+    .price-amount {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .price-amount span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .price-unit {
+      font-size: 0.82rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-bottom: 0.85rem;
+    }
+
+    .price-save {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      background: rgba(16, 185, 129, 0.14);
+      color: var(--accent-emerald);
+      margin-top: auto;
+      width: fit-content;
+    }
+
+    /* Drive Folders Directory Table */
+    .directory-section {
+      margin: 3.5rem 0;
+    }
+
+    .folder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1rem;
+    }
+
+    .folder-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.85rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .folder-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+
+    .folder-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .folder-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-cyan-soft);
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .folder-card h4 {
+      font-size: 0.96rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .folder-card p {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    /* Modal Player */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(5, 7, 11, 0.88);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-secondary);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 960px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+      animation: modalFadeIn 0.2s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      padding: 1rem 1.35rem;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .modal-header h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: var(--text-primary);
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      background: var(--accent-rose);
+    }
+
+    .modal-player-box {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #000;
+    }
+
+    .modal-player-box iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .modal-footer {
+      padding: 1rem 1.35rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--bg-card);
+    }
+
+    .modal-footer-note {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 2.5rem 0 3.5rem;
+      margin-top: 3rem;
+      color: var(--text-secondary);
+      font-size: 0.86rem;
+    }
+
+    .footer-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-badge">JV</div>
+        <div class="brand-text">
+          <h1>José Daniel Vera Suárez</h1>
+          <span>@josevera_22 · Editor & Productor Audiovisual</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#portafolio" class="nav-link">Portafolio de Videos</a>
+        <a href="#directorios" class="nav-link">Carpetas en Drive</a>
+        <a href="#tarifas" class="nav-link">Paquetes y Tarifas</a>
+        <a href="https://drive.google.com/drive/folders/160AUJGOJjSv1hekFWkRImfG79WzshLPN" target="_blank" rel="noopener" class="btn-outline">
+          📁 Abrir Drive Principal
+        </a>
+        <a href="mailto:nattdvs@gmail.com?subject=Cotizaci%C3%B3n%20Edici%C3%B3n%20de%20Video%20-%20Portafolio%20%40josevera_22" class="btn-primary">
+          ✉️ Contactar
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div>
+        <div class="hero-eyebrow">
+          <span>🎬 Portafolio Audiovisual Oficial · San Cristóbal, Táchira</span>
+        </div>
+        <h2>
+          Edición dinámica, narrativa visual y <span class="highlight">producción de alto impacto</span>.
+        </h2>
+        <p>
+          Catálogo interactivo conectado directamente con Google Drive, YouTube e Instagram. Especializado en edición de Reels y Shorts de retención (IA, negocios y marca personal), piezas comerciales gastronómicas y corporativas, crónicas deportivas y producción técnica para radio y televisión digital.
+        </p>
+        <div class="hero-actions">
+          <a href="#portafolio" class="btn-primary">▶ Explorar Videos (<span id="total-count-btn">58</span>)</a>
+          <a href="https://drive.google.com/drive/folders/1-nv75cpG2QJQpQ96UtkD7f1POJtFkYrU" target="_blank" rel="noopener" class="btn-outline">
+            🔗 Carpeta @josevera_22
+          </a>
+          <a href="https://drive.google.com/drive/folders/1q-VY7i3CcbuXDeeV6BvXNB2pg2feQaBd" target="_blank" rel="noopener" class="btn-outline">
+            🔗 Carpeta SEO Contenidos
+          </a>
+        </div>
+        <div class="drive-folders-bar">
+          <a href="https://drive.google.com/drive/folders/16YJ1qcNVN9YhUbpyQPlXlbdUUaZkbI90" target="_blank" rel="noopener" class="folder-chip">⚽ Offside Studio</a>
+          <a href="https://drive.google.com/drive/folders/1YY_XjoA2zVuk0jLubRNJM3Nd8DUpEHvo" target="_blank" rel="noopener" class="folder-chip">🍗 Don Chicken</a>
+          <a href="https://drive.google.com/drive/folders/1TFFPqSQLf2vYcvKvaCRQyXoTlfAouMuq" target="_blank" rel="noopener" class="folder-chip">📦 Juan Pardo (YouTube & Clips)</a>
+          <a href="https://drive.google.com/drive/folders/1-m1yluadu401Xioq2l6kr429qyQAYlQK" target="_blank" rel="noopener" class="folder-chip">🤖 Alek · IA & Tech Reels</a>
+        </div>
+      </div>
+
+      <div class="hero-stats-card">
+        <div class="profile-header">
+          <div class="profile-avatar">JV</div>
+          <div class="profile-meta">
+            <h3>Lic. José Vera (@josevera_22)</h3>
+            <p>Comunicación Social (UBA) · Postproducción, Sonido & Dirección Técnica</p>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-number">28+</div>
+            <div class="stat-label">Videos MP4 en Carpeta Portafolio</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">22+</div>
+            <div class="stat-label">Entregas Clientes Recientes (2026)</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Programas y Podcasts en YouTube</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">9</div>
+            <div class="stat-label">Reels Publicados en Instagram</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Controls & Video Grid -->
+    <section id="portafolio">
+      <div class="controls-section">
+        <div class="tabs-row" id="collection-tabs">
+          <button class="tab-btn active" data-collection="all">
+            Todos los Proyectos <span class="tab-count" id="count-all">0</span>
+          </button>
+          <button class="tab-btn" data-collection="principal">
+            ⭐ Portafolio @josevera_22 <span class="tab-count" id="count-principal">0</span>
+          </button>
+          <button class="tab-btn" data-collection="youtube">
+            ▶️ YouTube & Podcasts (TV/Radio) <span class="tab-count" id="count-youtube">0</span>
+          </button>
+          <button class="tab-btn" data-collection="seo">
+            📱 SEO Contenidos & IG Reels <span class="tab-count" id="count-seo">0</span>
+          </button>
+          <button class="tab-btn" data-collection="clientes2026">
+            🚀 Clientes Recientes (Ago–Oct 2026) <span class="tab-count" id="count-clientes2026">0</span>
+          </button>
+        </div>
+
+        <div class="filters-row">
+          <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search-input" class="search-input" placeholder="Buscar por título, cliente (ej. Erik, Don Chicken, Offside, Claude, Láser)..." />
+          </div>
+
+          <div class="niche-pills" id="niche-pills">
+            <button class="niche-pill active" data-niche="all">Todas las temáticas</button>
+            <button class="niche-pill" data-niche="Deportes & Fútbol">⚽ Deportes & Fútbol</button>
+            <button class="niche-pill" data-niche="Comercial & Marcas">🏢 Comercial & Marcas</button>
+            <button class="niche-pill" data-niche="IA, Tech & Negocios">🤖 IA, Tech & Negocios</button>
+            <button class="niche-pill" data-niche="Documental & Medios">🎙️ Documental & Medios</button>
+          </div>
+
+          <select id="sort-select" class="sort-select" aria-label="Ordenar videos">
+            <option value="featured">Orden: Destacados primero</option>
+            <option value="newest">Fecha: Más recientes</option>
+            <option value="title">Nombre: A → Z</option>
+            <option value="size">Tamaño de archivo</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="results-info">
+        <span id="showing-label">Mostrando proyectos del portafolio</span>
+        <span>💡 Haz clic en <strong>Vista Previa</strong> para reproducir el video aquí mismo o en <strong>Abrir Original</strong> para ir a Drive/YouTube.</span>
+      </div>
+
+      <div class="video-grid" id="video-grid"></div>
+    </section>
+
+    <!-- Direct Drive Folders & Docs Directory -->
+    <section id="directorios" class="directory-section">
+      <div class="section-header">
+        <div>
+          <h3>🗂️ Estructura de Carpetas y Documentos en Google Drive</h3>
+          <p>Acceso directo a cada carpeta raíz, subcarpeta de cliente y documentos de enlaces dentro de tu unidad de Drive.</p>
+        </div>
+      </div>
+
+      <div class="folder-grid">
+        <a href="https://drive.google.com/drive/folders/160AUJGOJjSv1hekFWkRImfG79WzshLPN" target="_blank" rel="noopener" class="folder-card">
+          <div class="folder-card-top">
+            <div class="folder-icon">📁</div>
+            <div>
+              <h4>PORTAFOLIO @josevera_22 (Raíz)</h4>
+              <p>Carpeta maestra en Google Drive que agrupa el portafolio personal y la colección de SEO Contenidos.</p>
+            </div>
+          </div>
+          <span class="card-btn external">Abrir carpeta en Drive ↗</span>
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/1-nv75cpG2QJQpQ96UtkD7f1POJtFkYrU" target="_blank" rel="noopener" class="folder-card">
+          <div class="folder-card-top">
+            <div class="folder-icon">🎬</div>
+            <div>
+              <h4>PORTAFOLIO de @josevera_22</h4>
+              <p>21 videos MP4 principales (Documental, Fútbol, Marcas, Reels) + 3 documentos de emisiones en YouTube.</p>
+            </div>
+          </div>
+          <span class="card-btn external">Abrir carpeta en Drive ↗</span>
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/1q-VY7i3CcbuXDeeV6BvXNB2pg2feQaBd" target="_blank" rel="noopener" class="folder-card">
+          <div class="folder-card-top">
+            <div class="folder-icon">📱</div>
+            <div>
+              <h4>SEO Contenidos (Derecho Intelectual)</h4>
+              <p>7 videos MP4 (Hotel Tamá, Serie IA 1–4, Yasmin 1–2) y documento con 9 Reels publicados en Instagram.</p>
+            </div>
+          </div>
+          <span class="card-btn external">Abrir carpeta en Drive ↗</span>
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/16YJ1qcNVN9YhUbpyQPlXlbdUUaZkbI90" target="_blank" rel="noopener" class="folder-card">
+          <div class="folder-card-top">
+            <div class="folder-icon">⚽</div>
+            <div>
+              <h4>OFFSIDE STUDIO — Videos Editados</h4>
+              <p>Producciones deportivas de formato largo/medio: OFFSIDE #1, OFFSIDE #2 y OFFSIDE #3.</p>
+            </div>
+          </div>
+          <span class="card-btn external">Abrir carpeta en Drive ↗</span>
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/1YY_XjoA2zVuk0jLubRNJM3Nd8DUpEHvo" target="_blank" rel="noopener" class="folder-card">
+          <div class="folder-card-top">
+            <div class="folder-icon">🍗</div>
+            <div>
+              <h4>Don Chicken — Campaña de Reels</h4>
+              <p>Entregas comerciales gastronómicas (#1, #1.2, #2, #3.1, #4 y #4.2) y material de campaña.</p>
+            </div>
+          </div>
+          <span class="card-btn external">Abrir carpeta en Drive ↗</span>
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/1bMKOHlbI4I29RTo2euk-MA4CPto_VW3M" target="_blank" rel="noopener" class="folder-card">
+          <div class="folder-card-top">
+            <div class="folder-icon">🚀</div>
+            <div>
+              <h4>Lumina Project — Septiembre & Agosto</h4>
+              <p>Videos YouTube y clips de Juan Pardo + serie de Reels de IA, programación y negocios para Alek.</p>
+            </div>
+          </div>
+          <span class="card-btn external">Abrir carpeta en Drive ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Pricing Section (Grounded in user's Google Sheet) -->
+    <section id="tarifas" class="pricing-section">
+      <div class="section-header" style="margin-bottom: 0.5rem;">
+        <div>
+          <h3>💳 Paquetes de Edición de Video</h3>
+          <p>Estructura oficial de precios por volumen sincronizada con tu hoja de cálculo <a href="https://docs.google.com/spreadsheets/d/1Osz_OihW2B0QQjcek6L4ZYUW-UIoeV2pMGZcYL6EWxw/edit?usp=drivesdk&ouid=104956946276353613502" target="_blank" rel="noopener" style="color: var(--accent-amber); text-decoration: underline;">Análisis de Precios de Videos por Paquetes</a>.</p>
+        </div>
+        <button class="btn-outline" onclick="togglePricingCards()" id="toggle-pricing-btn">👁️ Ocultar / Mostrar Tarifas</button>
+      </div>
+
+      <div class="pricing-grid" id="pricing-grid">
+        <div class="price-card">
+          <div class="price-PackName">Paquete Individual</div>
+          <div class="price-amount">$15 <span>USD</span></div>
+          <div class="price-unit">1 Video · $15.00 USD por video</div>
+          <span class="price-save" style="background: rgba(255,255,255,0.06); color: var(--text-secondary);">Entrega unitaria</span>
+        </div>
+
+        <div class="price-card">
+          <div class="price-PackName">Paquete Impulso (3 Videos)</div>
+          <div class="price-amount">$40 <span>USD</span></div>
+          <div class="price-unit">3 Videos · $13.33 USD por video</div>
+          <span class="price-save">Ahorro total: $5 USD</span>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-badge">Más Popular</div>
+          <div class="price-PackName">Paquete Crecimiento (5 Videos)</div>
+          <div class="price-amount">$60 <span>USD</span></div>
+          <div class="price-unit">5 Videos · $12.00 USD por video</div>
+          <span class="price-save">Ahorro total: $15 USD</span>
+        </div>
+
+        <div class="price-card">
+          <div class="price-badge" style="background: var(--accent-cyan);">Mejor Valor</div>
+          <div class="price-PackName">Paquete Escala (10 Videos)</div>
+          <div class="price-amount">$100 <span>USD</span></div>
+          <div class="price-unit">10 Videos · $10.00 USD por video</div>
+          <span class="price-save">Ahorro total: $50 USD</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Video Preview Modal -->
+  <div class="modal-backdrop" id="video-modal" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="modal-title">Vista Previa del Video</h4>
+        <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal-player-box" id="modal-player-container"></div>
+      <div class="modal-footer">
+        <span class="modal-footer-note">Si tienes bloqueadas las cookies de terceros en el navegador, abre el video directamente en una pestaña nueva.</span>
+        <a href="#" target="_blank" rel="noopener" id="modal-external-link" class="btn-primary">Abrir en Google Drive / YouTube ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-flex">
+      <div>
+        <strong>José Daniel Vera Suárez (@josevera_22)</strong> · Portafolio Web de Edición y Producción Audiovisual · San Cristóbal, Táchira, Venezuela.
+      </div>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="https://drive.google.com/drive/folders/160AUJGOJjSv1hekFWkRImfG79WzshLPN" target="_blank" rel="noopener" style="color: var(--accent-amber);">Carpeta Portafolio Drive</a>
+        <a href="https://docs.google.com/document/d/1LjTsTswNCU8WwZI5A-1OkD0OEV7IILVQHEYhZESETEA/edit?usp=drivesdk&ouid=104956946276353613502" target="_blank" rel="noopener">Informe Técnico Audiovisual (UBA)</a>
+        <a href="mailto:nattdvs@gmail.com">nattdvs@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const portfolioItems = [
+      // === 1. PORTAFOLIO PRINCIPAL (@josevera_22 - 1-nv75cpG2QJQpQ96UtkD7f1POJtFkYrU) ===
+      {
+        id: "1wbdgXRUKpeFwytFKOz826_07Oe5qSFuL",
+        title: "MI DOCUMENTAL",
+        collection: "principal",
+        niche: "Documental & Medios",
+        platform: "drive",
+        sizeMB: 284.6,
+        date: "2026-07-17",
+        featured: 1,
+        gradient: "linear-gradient(135deg, #1e3a8a, #0f172a)",
+        desc: "Producción documental de formato largo en el portafolio principal de @josevera_22. Investigación narrativa, montaje y postproducción audiovisual.",
+        url: "https://drive.google.com/file/d/1wbdgXRUKpeFwytFKOz826_07Oe5qSFuL/view?usp=drivesdk"
+      },
+      {
+        id: "18Uk__AqYDmNgQhxCsv3wNZeET6KqqWDQ",
+        title: "ALEZARD - ESPANYOL",
+        collection: "principal",
+        niche: "Deportes & Fútbol",
+        platform: "drive",
+        sizeMB: 190.6,
+        date: "2026-07-17",
+        featured: 2,
+        gradient: "linear-gradient(135deg, #0284c7, #1e1b4b)",
+        desc: "Edición dinámica de contenido futbolístico sobre el RCD Espanyol para Alezard. Cortes rítmicos, diseño sonoro y narrativa deportiva.",
+        url: "https://drive.google.com/file/d/18Uk__AqYDmNgQhxCsv3wNZeET6KqqWDQ/view?usp=drivesdk"
+      },
+      {
+        id: "1pd-fqip3Z1a2dNjqo7lz9AqtpMbfVr4m",
+        title: "ERIK - MARADONA",
+        collection: "principal",
+        niche: "Deportes & Fútbol",
+        platform: "drive",
+        sizeMB: 150.6,
+        date: "2026-06-01",
+        featured: 3,
+        gradient: "linear-gradient(135deg, #0369a1, #0f172a)",
+        desc: "Pieza de storytelling deportivo sobre Diego Armando Maradona producida junto a Erik Ramírez. Archivo histórico, ritmo y ambientación sonora.",
+        url: "https://drive.google.com/file/d/1pd-fqip3Z1a2dNjqo7lz9AqtpMbfVr4m/view?usp=drivesdk"
+      },
+      {
+        id: "1y6RjV2cRoxOr4_Gl1dFoG9NVlqg96heR",
+        title: "ERIK - MARACANAZO 1.2",
+        collection: "principal",
+        niche: "Deportes & Fútbol",
+        platform: "drive",
+        sizeMB: 143.6,
+        date: "2026-06-01",
+        featured: 4,
+        gradient: "linear-gradient(135deg, #1d4ed8, #111827)",
+        desc: "Crónica audiovisual sobre la gesta histórica del Maracanazo. Montaje documental con efectos de sonido, música épica y subtítulos dinámicos.",
+        url: "https://drive.google.com/file/d/1y6RjV2cRoxOr4_Gl1dFoG9NVlqg96heR/view?usp=drivesdk"
+      },
+      {
+        id: "1_FPwJJCFVMCaXM0qUcMPV8cpU58n_ouN",
+        title: "ERIK RAMIREZ #2",
+        collection: "principal",
+        niche: "Deportes & Fútbol",
+        platform: "drive",
+        sizeMB: 401.0,
+        date: "2026-05-05",
+        featured: 5,
+        gradient: "linear-gradient(135deg, #ca8a04, #1f2937)",
+        desc: "Producción especial de análisis y comentario deportivo para Erik Ramírez. Edición multicámara y grafismos en pantalla.",
+        url: "https://drive.google.com/file/d/1_FPwJJCFVMCaXM0qUcMPV8cpU58n_ouN/view?usp=drivesdk"
+      },
+      {
+        id: "1fu9EX4BVZ6uVTc0okVl104h9qRxC8Fem",
+        title: "ERIK 9310.3",
+        collection: "principal",
+        niche: "Deportes & Fútbol",
+        platform: "drive",
+        sizeMB: 262.3,
+        date: "2026-06-01",
+        featured: 6,
+        gradient: "linear-gradient(135deg, #b45309, #111827)",
+        desc: "Cápsula audiovisual deportiva de alta retención editada para Erik Ramírez.",
+        url: "https://drive.google.com/file/d/1fu9EX4BVZ6uVTc0okVl104h9qRxC8Fem/view?usp=drivesdk"
+      },
+      {
+        id: "1D3KhBbk3s7RsuWNr6IIQjN69waxd5wZ6",
+        title: "ERIK RAMIREZ #1",
+        collection: "principal",
+        niche: "Deportes & Fútbol",
+        platform: "drive",
+        sizeMB: 9.7,
+        date: "2026-05-05",
+        featured: 14,
+        gradient: "linear-gradient(135deg, #d97706, #1e293b)",
+        desc: "Reel deportivo vertical con edición ágil y subtítulos destacados para redes sociales.",
+        url: "https://drive.google.com/file/d/1D3KhBbk3s7RsuWNr6IIQjN69waxd5wZ6/view?usp=drivesdk"
+      },
+      {
+        id: "1mcR9StmCSyaq2QEWL6GwwMHIMzJwMdGy",
+        title: "LASER REEL",
+        collection: "principal",
+        niche: "Deportes & Fútbol",
+        platform: "drive",
+        sizeMB: 89.8,
+        date: "2026-05-05",
+        featured: 7,
+        gradient: "linear-gradient(135deg, #dc2626, #18181b)",
+        desc: "Reel promocional y resumen de impacto para el programa y podcast Láser Deportivo.",
+        url: "https://drive.google.com/file/d/1mcR9StmCSyaq2QEWL6GwwMHIMzJwMdGy/view?usp=drivesdk"
+      },
+      {
+        id: "177F_q02EqWnlc0PMocte0sQhU896qbqA",
+        title: "JUAN CORREA #1",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 75.5,
+        date: "2026-07-17",
+        featured: 8,
+        gradient: "linear-gradient(135deg, #4f46e5, #0f172a)",
+        desc: "Edición de video para marca personal y creación de contenido con Juan Correa (Entrega #1).",
+        url: "https://drive.google.com/file/d/177F_q02EqWnlc0PMocte0sQhU896qbqA/view?usp=drivesdk"
+      },
+      {
+        id: "1FuIDI2tobE9nWOw119Z2m5JwOotb1vnQ",
+        title: "JUAN CORREA #2",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 136.4,
+        date: "2026-07-17",
+        featured: 9,
+        gradient: "linear-gradient(135deg, #4338ca, #1e1b4b)",
+        desc: "Segunda pieza audiovisual para Juan Correa con ritmo dinámico, B-roll y acentos visuales.",
+        url: "https://drive.google.com/file/d/1FuIDI2tobE9nWOw119Z2m5JwOotb1vnQ/view?usp=drivesdk"
+      },
+      {
+        id: "1fhITWZhyurmB-aqZoQX6fgWy2w9bV7rU",
+        title: "GUARDIANS #1",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 37.0,
+        date: "2026-07-17",
+        featured: 10,
+        gradient: "linear-gradient(135deg, #059669, #064e3b)",
+        desc: "Pieza comercial y promocional para Guardians. Edición limpia, transiciones modernas y corrección de color.",
+        url: "https://drive.google.com/file/d/1fhITWZhyurmB-aqZoQX6fgWy2w9bV7rU/view?usp=drivesdk"
+      },
+      {
+        id: "19AOJeiWpilnyaPBNbAMOg-YmpgRxNhlA",
+        title: "CLIMBUP",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 34.7,
+        date: "2026-07-17",
+        featured: 11,
+        gradient: "linear-gradient(135deg, #ea580c, #1c1917)",
+        desc: "Reel publicitario y de agencia para ClimbUp. Ritmo comercial orientado a conversión en redes.",
+        url: "https://drive.google.com/file/d/19AOJeiWpilnyaPBNbAMOg-YmpgRxNhlA/view?usp=drivesdk"
+      },
+      {
+        id: "17CiwXEGX1seRaD3c2JOgTEDNr-4A0IRm",
+        title: "SIMETRIA #1",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 96.3,
+        date: "2026-07-17",
+        featured: 12,
+        gradient: "linear-gradient(135deg, #0d9488, #134e4a)",
+        desc: "Pieza estética y corporativa para Simetría. Cuidado visual en composición, ritmo y tipografía.",
+        url: "https://drive.google.com/file/d/17CiwXEGX1seRaD3c2JOgTEDNr-4A0IRm/view?usp=drivesdk"
+      },
+      {
+        id: "1w2fO_WPR4j-qQQKb42aGjijX3pmdnYqZ",
+        title: "SAJONIA #1",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 95.8,
+        date: "2026-07-17",
+        featured: 13,
+        gradient: "linear-gradient(135deg, #9333ea, #2e1065)",
+        desc: "Video promocional para Sajonia. Edición comercial con tomas de detalle y musicalización.",
+        url: "https://drive.google.com/file/d/1w2fO_WPR4j-qQQKb42aGjijX3pmdnYqZ/view?usp=drivesdk"
+      },
+      {
+        id: "1UZY669cEQRoLMoxpfVAW6a-PCPPvGgwH",
+        title: "CBS",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 28.3,
+        date: "2026-07-17",
+        featured: 15,
+        gradient: "linear-gradient(135deg, #2563eb, #172554)",
+        desc: "Cápsula corporativa y comercial producida para CBS.",
+        url: "https://drive.google.com/file/d/1UZY669cEQRoLMoxpfVAW6a-PCPPvGgwH/view?usp=drivesdk"
+      },
+      {
+        id: "1M0wxBrkNd6LIl6R_ETqhPaH5sKqTSbkx",
+        title: "DDP ENVIOS — Spot Principal",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 97.1,
+        date: "2026-04-08",
+        featured: 16,
+        gradient: "linear-gradient(135deg, #0284c7, #082f49)",
+        desc: "Video comercial y explicativo de servicios logísticos para DDP Envíos.",
+        url: "https://drive.google.com/file/d/1M0wxBrkNd6LIl6R_ETqhPaH5sKqTSbkx/view?usp=drivesdk"
+      },
+      {
+        id: "1b7I91iDs902JlapNBFdMowDylWVfatRj",
+        title: "DDP ENVIOS - PRE GUIA 1.2",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 63.1,
+        date: "2026-06-01",
+        featured: 17,
+        gradient: "linear-gradient(135deg, #0369a1, #0c4a6e)",
+        desc: "Tutorial dinámico sobre el proceso de pre-guía para clientes de DDP Envíos.",
+        url: "https://drive.google.com/file/d/1b7I91iDs902JlapNBFdMowDylWVfatRj/view?usp=drivesdk"
+      },
+      {
+        id: "1KurcOpg7YdkaYRxOBA5F6j8xN3pssQ7k",
+        title: "4AC COMPANY #1",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 36.0,
+        date: "2026-04-08",
+        featured: 18,
+        gradient: "linear-gradient(135deg, #475569, #0f172a)",
+        desc: "Primera entrega audiovisual corporativa para 4AC Company.",
+        url: "https://drive.google.com/file/d/1KurcOpg7YdkaYRxOBA5F6j8xN3pssQ7k/view?usp=drivesdk"
+      },
+      {
+        id: "1avO2rA9ZiHjDuJK3k-eoH_1G38sEZJHb",
+        title: "4AC COMPANY #2",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 56.4,
+        date: "2026-04-08",
+        featured: 19,
+        gradient: "linear-gradient(135deg, #334155, #0f172a)",
+        desc: "Segunda entrega audiovisual corporativa y promocional para 4AC Company.",
+        url: "https://drive.google.com/file/d/1avO2rA9ZiHjDuJK3k-eoH_1G38sEZJHb/view?usp=drivesdk"
+      },
+      {
+        id: "1pIXrAVUOiiXl9_Lb2zDsUDkwO673iXeX",
+        title: "GORDO GPS #1",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 142.9,
+        date: "2026-05-05",
+        featured: 20,
+        gradient: "linear-gradient(135deg, #eab308, #422006)",
+        desc: "Reel comercial automotriz y de geolocalización para Gordo GPS.",
+        url: "https://drive.google.com/file/d/1pIXrAVUOiiXl9_Lb2zDsUDkwO673iXeX/view?usp=drivesdk"
+      },
+      {
+        id: "1dOzpg1Zjn8rb4BDK5OOluvEocXybARNY",
+        title: "HOUSE MUEBLES #1.1",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 54.7,
+        date: "2026-05-05",
+        featured: 21,
+        gradient: "linear-gradient(135deg, #a16207, #27272a)",
+        desc: "Showcase comercial de mobiliario e interiorismo para House Muebles.",
+        url: "https://drive.google.com/file/d/1dOzpg1Zjn8rb4BDK5OOluvEocXybARNY/view?usp=drivesdk"
+      },
+      {
+        id: "1I_Boid43WL64tjCpg1xS2RMGDzEOR9Yr",
+        title: "MAMA COLLECTION #1",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 32.2,
+        date: "2026-05-05",
+        featured: 22,
+        gradient: "linear-gradient(135deg, #db2777, #500724)",
+        desc: "Spot de campaña de moda y temporada especial para Mama Collection.",
+        url: "https://drive.google.com/file/d/1I_Boid43WL64tjCpg1xS2RMGDzEOR9Yr/view?usp=drivesdk"
+      },
+      {
+        id: "1OwT1aZc3s64-VP_KL2gtRTeL15hn7m4J",
+        title: "POLLO LOKO",
+        collection: "principal",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 25.5,
+        date: "2026-04-08",
+        featured: 23,
+        gradient: "linear-gradient(135deg, #ef4444, #450a0a)",
+        desc: "Reel gastronómico promocional lleno de color y ritmo para Pollo Loko.",
+        url: "https://drive.google.com/file/d/1OwT1aZc3s64-VP_KL2gtRTeL15hn7m4J/view?usp=drivesdk"
+      },
+
+      // === 2. YOUTUBE & PODCASTS (LASER DEPORTIVO, LA NACIÓN RADIO, ASOSUR MEDELLÍN) ===
+      {
+        id: "o5PmoCb7S7k",
+        title: "Láser Podcast #1: “Pueblo Nuevo gradúa futbolistas” Ft. Laureano Jaimes",
+        collection: "youtube",
+        niche: "Deportes & Fútbol",
+        platform: "youtube",
+        sizeMB: 0,
+        date: "2025-12-05",
+        featured: 24,
+        gradient: "linear-gradient(135deg, #b91c1c, #111827)",
+        desc: "Producción y postproducción audiovisual para @laser_deportivo (1h 15m · 5.7K vistas). Entrevista histórica a Laureano Jaimes, ídolo del Deportivo Táchira.",
+        url: "https://www.youtube.com/watch?v=o5PmoCb7S7k&t=83s"
+      },
+      {
+        id: "EDgnoMM7EdU",
+        title: "Láser Podcast #2: “En Táchira me apodaban EL MALANDRO” Ft. José Mauricio Parra",
+        collection: "youtube",
+        niche: "Deportes & Fútbol",
+        platform: "youtube",
+        sizeMB: 0,
+        date: "2025-12-13",
+        featured: 25,
+        gradient: "linear-gradient(135deg, #991b1b, #1f2937)",
+        desc: "Producción y postproducción acreditada a José Daniel Vera e Iker Ramírez en Láser Deportivo (1h 17m · 4.0K vistas). Conversación con el mundialista sub-20.",
+        url: "https://www.youtube.com/watch?v=EDgnoMM7EdU&t=769s"
+      },
+      {
+        id: "iwONiRiRdVs",
+        title: "Láser Podcast #6: “Sam Shepherd marcó el antes y el después” Ft. Carlos Villasmil",
+        collection: "youtube",
+        niche: "Deportes & Fútbol",
+        platform: "youtube",
+        sizeMB: 0,
+        date: "2026-03-21",
+        featured: 26,
+        gradient: "linear-gradient(135deg, #c2410c, #111827)",
+        desc: "Producción de José Daniel Vera para el sexto episodio de Láser Podcast (1h 15m · 3.7K vistas) junto a la leyenda del baloncesto Carlos Villasmil.",
+        url: "https://www.youtube.com/watch?v=iwONiRiRdVs&t=4231s"
+      },
+      {
+        id: "W2E8oTg3yZc",
+        title: "Láser Deportivo: La Final ante EE.UU. en el Clásico Mundial Ft. Fernando Arreaza",
+        collection: "youtube",
+        niche: "Deportes & Fútbol",
+        platform: "youtube",
+        sizeMB: 0,
+        date: "2026-03-28",
+        featured: 27,
+        gradient: "linear-gradient(135deg, #dc2626, #0f172a)",
+        desc: "Emisión especial en video para el canal de YouTube de Láser Deportivo (22m · 7.7K vistas) entrevistando al narrador Fernando Arreaza.",
+        url: "https://www.youtube.com/watch?v=W2E8oTg3yZc&t=11s"
+      },
+      {
+        id: "-gRMmUKOWUA",
+        title: "Láser Deportivo: ¿La mejor competición de Clubes? | Mundial de Clubes EP #0",
+        collection: "youtube",
+        niche: "Deportes & Fútbol",
+        platform: "youtube",
+        sizeMB: 0,
+        date: "2025-06-14",
+        featured: 28,
+        gradient: "linear-gradient(135deg, #ea580c, #090d16)",
+        desc: "Edición y empaquetado de reporte especial desde el Hard Rock Stadium de Miami para el canal de Láser Deportivo (17m).",
+        url: "https://www.youtube.com/watch?v=-gRMmUKOWUA&t=20s"
+      },
+      {
+        id: "uoRqb6Nxiig",
+        title: "La Nación Radio: Programa “Mi Gente” — Parrandón con Agrupación Musical Cuatro",
+        collection: "youtube",
+        niche: "Documental & Medios",
+        platform: "youtube",
+        sizeMB: 0,
+        date: "2024-12-21",
+        featured: 29,
+        gradient: "linear-gradient(135deg, #15803d, #052e16)",
+        desc: "Operación técnica de audio y video multicámara en vivo por el Lic. José Vera para La Nación Radio (1h 18m). Concierto navideño en estudio.",
+        url: "https://www.youtube.com/watch?v=uoRqb6Nxiig&t=4356s"
+      },
+      {
+        id: "Okaxh4Tq_J8",
+        title: "La Nación Radio: “Historia, letras y percusión” con la banda Los Siniestros",
+        collection: "youtube",
+        niche: "Documental & Medios",
+        platform: "youtube",
+        sizeMB: 0,
+        date: "2024-12-19",
+        featured: 30,
+        gradient: "linear-gradient(135deg, #0f766e, #042f2e)",
+        desc: "Controles de audio y video en vivo por José Vera en La Nación Radio FM (1h 03m). Sesión musical en directo y entrevista cultural.",
+        url: "https://www.youtube.com/watch?v=Okaxh4Tq_J8&t=325s"
+      },
+      {
+        id: "RFMDiNSrIZQ",
+        title: "ASOSUR Medellín: Documental Corto — Empresarios Adventistas",
+        collection: "youtube",
+        niche: "Documental & Medios",
+        platform: "youtube",
+        sizeMB: 0,
+        date: "2024-11-28",
+        featured: 31,
+        gradient: "linear-gradient(135deg, #0369a1, #1e293b)",
+        desc: "Cápsula testimonial e inspiracional producida para Asociación Sur Occidental (ASOSUR Medellín) en la Plaza de Flores.",
+        url: "https://www.youtube.com/watch?v=RFMDiNSrIZQ"
+      },
+
+      // === 3. SEO CONTENIDOS & INSTAGRAM REELS ===
+      {
+        id: "1I4o9jOyW0G-WuUbF5zU24wVy9tcB4Brz",
+        title: "HOTEL TAMÁ — Reel Comercial",
+        collection: "seo",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 6.5,
+        date: "2026-04-08",
+        featured: 32,
+        gradient: "linear-gradient(135deg, #b45309, #292524)",
+        desc: "Pieza audiovisual para el icónico Hotel Tamá editada bajo derecho intelectual de SEO Contenidos.",
+        url: "https://drive.google.com/file/d/1I4o9jOyW0G-WuUbF5zU24wVy9tcB4Brz/view?usp=drivesdk"
+      },
+      {
+        id: "1lUyVfhWV8-L6xUO6ouE9vi2HC9-RLuE1",
+        title: "YASMIN #1 — Marca Personal",
+        collection: "seo",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 6.3,
+        date: "2026-04-08",
+        featured: 33,
+        gradient: "linear-gradient(135deg, #be185d, #3b0764)",
+        desc: "Reel vertical editado para Yasmin (Entrega 1) dentro de la colección de SEO Contenidos.",
+        url: "https://drive.google.com/file/d/1lUyVfhWV8-L6xUO6ouE9vi2HC9-RLuE1/view?usp=drivesdk"
+      },
+      {
+        id: "16r5tFZpSKjixJE5QQSw6cGyHP9pW8qeJ",
+        title: "YASMIN #2 — Marca Personal",
+        collection: "seo",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 7.3,
+        date: "2026-04-08",
+        featured: 34,
+        gradient: "linear-gradient(135deg, #9d174d, #31102f)",
+        desc: "Segunda entrega de Reel dinámico para Yasmin bajo SEO Contenidos.",
+        url: "https://drive.google.com/file/d/16r5tFZpSKjixJE5QQSw6cGyHP9pW8qeJ/view?usp=drivesdk"
+      },
+      {
+        id: "19yutNJRN9eK8UqO2p-2XLGnxGZh_KAml",
+        title: "SERIE IA #1 — SEO Contenidos",
+        collection: "seo",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 6.5,
+        date: "2026-04-08",
+        featured: 35,
+        gradient: "linear-gradient(135deg, #6d28d9, #1e1b4b)",
+        desc: "Cápsula vertical con integración visual e inteligencia artificial (IA 1) en SEO Contenidos.",
+        url: "https://drive.google.com/file/d/19yutNJRN9eK8UqO2p-2XLGnxGZh_KAml/view?usp=drivesdk"
+      },
+      {
+        id: "1FFFULAZu4wwyEnkj05mh8qjoeIduQlCn",
+        title: "SERIE IA #2 — SEO Contenidos",
+        collection: "seo",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 5.0,
+        date: "2026-04-08",
+        featured: 36,
+        gradient: "linear-gradient(135deg, #7c3aed, #1e1b4b)",
+        desc: "Segunda entrega de la serie audiovisual con recursos de IA para redes sociales.",
+        url: "https://drive.google.com/file/d/1FFFULAZu4wwyEnkj05mh8qjoeIduQlCn/view?usp=drivesdk"
+      },
+      {
+        id: "1I00rnsh0UpV68SV9mDWPb5yc25hrh2Pm",
+        title: "SERIE IA #3 — SEO Contenidos",
+        collection: "seo",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 6.1,
+        date: "2026-04-08",
+        featured: 37,
+        gradient: "linear-gradient(135deg, #5b21b6, #0f172a)",
+        desc: "Tercera entrega de edición rápida con apoyo visual de IA en SEO Contenidos.",
+        url: "https://drive.google.com/file/d/1I00rnsh0UpV68SV9mDWPb5yc25hrh2Pm/view?usp=drivesdk"
+      },
+      {
+        id: "1xsqyC319XHdhs2QF2A3_lEk7I_DfF-Mm",
+        title: "SERIE IA #4 — SEO Contenidos",
+        collection: "seo",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 8.3,
+        date: "2026-04-08",
+        featured: 38,
+        gradient: "linear-gradient(135deg, #4c1d95, #090d16)",
+        desc: "Cuarta entrega de la serie IA editada bajo derecho intelectual de SEO Contenidos.",
+        url: "https://drive.google.com/file/d/1xsqyC319XHdhs2QF2A3_lEk7I_DfF-Mm/view?usp=drivesdk"
+      },
+      {
+        id: "IG_REELS_DOC",
+        title: "Colección de 9 Reels en Instagram (Documento VIDEOS VARIOS)",
+        collection: "seo",
+        niche: "Comercial & Marcas",
+        platform: "instagram",
+        sizeMB: 0,
+        date: "2026-04-08",
+        featured: 39,
+        gradient: "linear-gradient(135deg, #c026d3, #e11d48)",
+        desc: "9 publicaciones de Instagram compiladas en el documento VIDEOS VARIOS: DWCpXDRERYy, DVRHFCWihBf, DWFBSO8jc3T, DVHIrxQFPpq, DUWqWUODXap, DV18JvGjzP_, DVjahMYjIZr, DVg4uickXFL y DTtOK0dETrJ.",
+        url: "https://docs.google.com/document/d/10YOatu5B6pGUDpdJ4iUZ-r-a2h8g7RaXMtCRaPBFHKg/edit?usp=drivesdk&ouid=104956946276353613502"
+      },
+
+      // === 4. PROYECTOS RECIENTES DE CLIENTES (AGOSTO - OCTUBRE 2026) ===
+      {
+        id: "1g1fhhY_O5E92u6DLsdsD442qYFfAN3Ke",
+        title: "DON CHICKEN #4.2 (Versión Final)",
+        collection: "clientes2026",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 221.9,
+        date: "2026-10-11",
+        featured: 40,
+        gradient: "linear-gradient(135deg, #ea580c, #431407)",
+        desc: "Entrega más reciente para la campaña gastronómica de Don Chicken (Octubre 2026).",
+        url: "https://drive.google.com/file/d/1g1fhhY_O5E92u6DLsdsD442qYFfAN3Ke/view?usp=drivesdk"
+      },
+      {
+        id: "1j-avGcAso2zLe94bW8KUgvPMs5MzEbQL",
+        title: "PROYECTO JIMÉNEZ (JIMENEZ.mp4)",
+        collection: "clientes2026",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 244.2,
+        date: "2026-10-10",
+        featured: 41,
+        gradient: "linear-gradient(135deg, #0284c7, #0f172a)",
+        desc: "Producción audiovisual completa entregada en octubre de 2026 en la raíz de Google Drive.",
+        url: "https://drive.google.com/file/d/1j-avGcAso2zLe94bW8KUgvPMs5MzEbQL/view?usp=drivesdk"
+      },
+      {
+        id: "1S-92S7mWhOTBRA-TrCQKz9ljaj6zNQEE",
+        title: "OFFSIDE STUDIO #3",
+        collection: "clientes2026",
+        niche: "Deportes & Fútbol",
+        platform: "drive",
+        sizeMB: 849.6,
+        date: "2026-10-05",
+        featured: 42,
+        gradient: "linear-gradient(135deg, #16a34a, #052e16)",
+        desc: "Tercer episodio editado para Offside Studio. Producción deportiva de formato completo.",
+        url: "https://drive.google.com/file/d/1S-92S7mWhOTBRA-TrCQKz9ljaj6zNQEE/view?usp=drivesdk"
+      },
+      {
+        id: "176Kt5TYFoKSNVUuuHmLc1YtValmPMNp7",
+        title: "OFFSIDE STUDIO #2",
+        collection: "clientes2026",
+        niche: "Deportes & Fútbol",
+        platform: "drive",
+        sizeMB: 1271.7,
+        date: "2026-09-25",
+        featured: 43,
+        gradient: "linear-gradient(135deg, #15803d, #064e3b)",
+        desc: "Segundo episodio editado para Offside Studio en alta definición.",
+        url: "https://drive.google.com/file/d/176Kt5TYFoKSNVUuuHmLc1YtValmPMNp7/view?usp=drivesdk"
+      },
+      {
+        id: "1Y-cgogPNI1tMk0qubiB43on8S4dPVLG_",
+        title: "OFFSIDE STUDIO #1",
+        collection: "clientes2026",
+        niche: "Deportes & Fútbol",
+        platform: "drive",
+        sizeMB: 545.6,
+        date: "2026-09-17",
+        featured: 44,
+        gradient: "linear-gradient(135deg, #14532d, #090d16)",
+        desc: "Primer episodio editado para el proyecto deportivo Offside Studio.",
+        url: "https://drive.google.com/file/d/1Y-cgogPNI1tMk0qubiB43on8S4dPVLG_/view?usp=drivesdk"
+      },
+      {
+        id: "1_x4Uaw66DYD1E-D0fBYP20GZgtC7p1CJ",
+        title: "JUAN PARDO — Tendencias vs Amazon (YouTube 18:39m)",
+        collection: "clientes2026",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 978.3,
+        date: "2026-09-17",
+        featured: 45,
+        gradient: "linear-gradient(135deg, #d97706, #0f172a)",
+        desc: "Video largo de YouTube (18:39 min) editado para Juan Pardo (Lumina Project) sobre e-commerce y tendencias.",
+        url: "https://drive.google.com/file/d/1_x4Uaw66DYD1E-D0fBYP20GZgtC7p1CJ/view?usp=drivesdk"
+      },
+      {
+        id: "1Uye6-15lM2bUCHFRpHeg-MdDc6xqRERo",
+        title: "JUAN PARDO — Video 22 (YouTube 10:22m)",
+        collection: "clientes2026",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 551.5,
+        date: "2026-09-28",
+        featured: 46,
+        gradient: "linear-gradient(135deg, #b45309, #1e293b)",
+        desc: "Segundo video de formato largo (10:22 min) editado para el canal de Juan Pardo.",
+        url: "https://drive.google.com/file/d/1Uye6-15lM2bUCHFRpHeg-MdDc6xqRERo/view?usp=drivesdk"
+      },
+      {
+        id: "1Y_NjFlsALyq8pUq71bQEi_n96eQkqwMz",
+        title: "JUAN PARDO — Clip 1 (Tendencias vs Amazon)",
+        collection: "clientes2026",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 105.8,
+        date: "2026-09-18",
+        featured: 47,
+        gradient: "linear-gradient(135deg, #ca8a04, #18181b)",
+        desc: "Primer corte vertical de alto impacto extraído del episodio Tendencias vs Amazon.",
+        url: "https://drive.google.com/file/d/1Y_NjFlsALyq8pUq71bQEi_n96eQkqwMz/view?usp=drivesdk"
+      },
+      {
+        id: "1Dm2qVF4BXXpZUkvsxvl-MXfRWRZvX8FO",
+        title: "DON CHICKEN #2",
+        collection: "clientes2026",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 68.8,
+        date: "2026-09-29",
+        featured: 48,
+        gradient: "linear-gradient(135deg, #c2410c, #27272a)",
+        desc: "Segundo spot comercial editado para la marca Don Chicken.",
+        url: "https://drive.google.com/file/d/1Dm2qVF4BXXpZUkvsxvl-MXfRWRZvX8FO/view?usp=drivesdk"
+      },
+      {
+        id: "1eKyodxksPQeV5d6oJiEs-AxGFuVGsu7U",
+        title: "DON CHICKEN #3.1",
+        collection: "clientes2026",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 31.4,
+        date: "2026-09-28",
+        featured: 49,
+        gradient: "linear-gradient(135deg, #9a3412, #18181b)",
+        desc: "Tercer spot comercial editado para la campaña de redes de Don Chicken.",
+        url: "https://drive.google.com/file/d/1eKyodxksPQeV5d6oJiEs-AxGFuVGsu7U/view?usp=drivesdk"
+      },
+      {
+        id: "1bMAIBmHhPAtmlZiMIn3dTji4YsuzFqt4",
+        title: "DON CHICKEN #1.2",
+        collection: "clientes2026",
+        niche: "Comercial & Marcas",
+        platform: "drive",
+        sizeMB: 36.0,
+        date: "2026-09-10",
+        featured: 50,
+        gradient: "linear-gradient(135deg, #dc2626, #1f2937)",
+        desc: "Primer spot comercial (versión 1.2) para Don Chicken.",
+        url: "https://drive.google.com/file/d/1bMAIBmHhPAtmlZiMIn3dTji4YsuzFqt4/view?usp=drivesdk"
+      },
+      {
+        id: "1LtcR4JCxzszsrkW9EKsY-hSn-2LVj4Ez",
+        title: "ALEK — Reel 16: AI Tools para negocios",
+        collection: "clientes2026",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 73.9,
+        date: "2026-09-13",
+        featured: 51,
+        gradient: "linear-gradient(135deg, #4f46e5, #090d16)",
+        desc: "Reel educativo sobre herramientas de inteligencia artificial aplicadas a negocios para Alek.",
+        url: "https://drive.google.com/file/d/1LtcR4JCxzszsrkW9EKsY-hSn-2LVj4Ez/view?usp=drivesdk"
+      },
+      {
+        id: "1Z4tDjM9RnQNRWJN13UkaTobb2_x2gC3O",
+        title: "ALEK — Reel 20: Ranking de AI Models",
+        collection: "clientes2026",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 17.9,
+        date: "2026-09-13",
+        featured: 52,
+        gradient: "linear-gradient(135deg, #6366f1, #1e1b4b)",
+        desc: "Comparativa visual dinámica de modelos de IA para Alek.",
+        url: "https://drive.google.com/file/d/1Z4tDjM9RnQNRWJN13UkaTobb2_x2gC3O/view?usp=drivesdk"
+      },
+      {
+        id: "1dNQw3Ak3TfL3ZixJ-gPYR8c6xGZJEVaJ",
+        title: "ALEK — Reel 21: Yo acumulando skills de Claude",
+        collection: "clientes2026",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 34.3,
+        date: "2026-09-13",
+        featured: 53,
+        gradient: "linear-gradient(135deg, #7c3aed, #0f172a)",
+        desc: "Reel de humor y productividad tech sobre flujos de trabajo con Claude.",
+        url: "https://drive.google.com/file/d/1dNQw3Ak3TfL3ZixJ-gPYR8c6xGZJEVaJ/view?usp=drivesdk"
+      },
+      {
+        id: "154ylWcfm_SbOQs4M5hJNZzYZdcWaeEOc",
+        title: "ALEK — Reel 22: Si trabajas por dinero",
+        collection: "clientes2026",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 59.1,
+        date: "2026-09-13",
+        featured: 54,
+        gradient: "linear-gradient(135deg, #2563eb, #0f172a)",
+        desc: "Reel de mentalidad y emprendimiento tecnológico editado para Alek.",
+        url: "https://drive.google.com/file/d/154ylWcfm_SbOQs4M5hJNZzYZdcWaeEOc/view?usp=drivesdk"
+      },
+      {
+        id: "1X5WPGVkdqaq6ZgTGjOMPZGYiCvjL7AZH",
+        title: "ALEK — Reel 23: Ranking de Coding Agents",
+        collection: "clientes2026",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 47.2,
+        date: "2026-09-14",
+        featured: 55,
+        gradient: "linear-gradient(135deg, #0891b2, #0f172a)",
+        desc: "Edición con gráficos y retención visual evaluando agentes de programación.",
+        url: "https://drive.google.com/file/d/1X5WPGVkdqaq6ZgTGjOMPZGYiCvjL7AZH/view?usp=drivesdk"
+      },
+      {
+        id: "1QHzlyqFnd6YtG7iwJS2dOhf3pUFf9PeE",
+        title: "ALEK — Reel 25: Coleccionando Lead Magnets",
+        collection: "clientes2026",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 62.0,
+        date: "2026-09-15",
+        featured: 56,
+        gradient: "linear-gradient(135deg, #0284c7, #1e1b4b)",
+        desc: "Reel sobre estrategias de captación y automatización digital editado para Alek.",
+        url: "https://drive.google.com/file/d/1QHzlyqFnd6YtG7iwJS2dOhf3pUFf9PeE/view?usp=drivesdk"
+      },
+      {
+        id: "12uvvEBb6tXkhnIoqp2VPqmb-bYS1_Ggo",
+        title: "Automatiza tu investigación con estas 4 herramientas",
+        collection: "clientes2026",
+        niche: "IA, Tech & Negocios",
+        platform: "drive",
+        sizeMB: 226.9,
+        date: "2026-08-14",
+        featured: 57,
+        gradient: "linear-gradient(135deg, #0d9488, #0f172a)",
+        desc: "Pieza educativa sobre herramientas de automatización e investigación (Agosto 2026).",
+        url: "https://drive.google.com/file/d/12uvvEBb6tXkhnIoqp2VPqmb-bYS1_Ggo/view?usp=drivesdk"
+      },
+      {
+        id: "19tq3krOPu8rQiSeiMakCo_mh6p5I_WT3",
+        title: "JOSE 1.mp4 — Showreel / Presentación Personal",
+        collection: "clientes2026",
+        niche: "Documental & Medios",
+        platform: "drive",
+        sizeMB: 55.3,
+        date: "2026-08-26",
+        featured: 58,
+        gradient: "linear-gradient(135deg, #f59e0b, #1e293b)",
+        desc: "Pieza personal de José Vera alojada en la unidad principal de Google Drive.",
+        url: "https://drive.google.com/file/d/19tq3krOPu8rQiSeiMakCo_mh6p5I_WT3/view?usp=drivesdk"
+      }
+    ];
+
+    let activeCollection = "all";
+    let activeNiche = "all";
+    let searchQuery = "";
+    let sortBy = "featured";
+
+    function updateCounts() {
+      document.getElementById("count-all").textContent = portfolioItems.length;
+      document.getElementById("total-count-btn").textContent = portfolioItems.length;
+      document.getElementById("count-principal").textContent = portfolioItems.filter(i => i.collection === "principal").length;
+      document.getElementById("count-youtube").textContent = portfolioItems.filter(i => i.collection === "youtube").length;
+      document.getElementById("count-seo").textContent = portfolioItems.filter(i => i.collection === "seo").length;
+      document.getElementById("count-clientes2026").textContent = portfolioItems.filter(i => i.collection === "clientes2026").length;
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById("video-grid");
+      let filtered = portfolioItems.filter(item => {
+        const matchCollection = activeCollection === "all" || item.collection === activeCollection;
+        const matchNiche = activeNiche === "all" || item.niche === activeNiche;
+        const q = searchQuery.toLowerCase().trim();
+        const matchSearch = !q || item.title.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q) || item.niche.toLowerCase().includes(q);
+        return matchCollection && matchNiche && matchSearch;
+      });
+
+      if (sortBy === "featured") {
+        filtered.sort((a, b) => a.featured - b.featured);
+      } else if (sortBy === "newest") {
+        filtered.sort((a, b) => b.date.localeCompare(a.date));
+      } else if (sortBy === "title") {
+        filtered.sort((a, b) => a.title.localeCompare(b.title));
+      } else if (sortBy === "size") {
+        filtered.sort((a, b) => b.sizeMB - a.sizeMB);
+      }
+
+      document.getElementById("showing-label").textContent = `Mostrando ${filtered.length} de ${portfolioItems.length} proyectos audiovisuales`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-subtle);">
+            <p style="font-size: 1.05rem; margin-bottom: 0.75rem;">No se encontraron videos con ese filtro o búsqueda.</p>
+            <button class="btn-outline" onclick="resetFilters()">Restablecer filtros</button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => {
+        const platformLabel = item.platform === "youtube" ? "YouTube" : (item.platform === "instagram" ? "Instagram Reels" : "Google Drive MP4");
+        const sizeLabel = item.sizeMB > 0 ? `${item.sizeMB.toFixed(1)} MB` : (item.platform === "youtube" ? "Streaming HD" : "9 Links");
+        const canPreview = item.platform !== "instagram";
+
+        return `
+          <article class="video-card">
+            <div class="card-thumb" onclick="${canPreview ? `openModal('${item.id}', '${item.platform}', '${item.title.replace(/'/g, "\'")}', '${item.url}')` : `window.open('${item.url}', '_blank')`}">
+              <div class="thumb-bg" style="background: ${item.gradient};"></div>
+              <div class="card-badges-top">
+                <span class="platform-badge ${item.platform}">${platformLabel}</span>
+                <span class="size-badge">${sizeLabel}</span>
+              </div>
+              <div class="play-overlay" title="Reproducir vista previa">▶</div>
+            </div>
+            <div class="card-body">
+              <div class="card-category">${item.niche}</div>
+              <h4 class="card-title">${item.title}</h4>
+              <p class="card-desc">${item.desc}</p>
+              <div class="card-meta-row">
+                <span>📅 ${item.date}</span>
+                <span>${item.collection === 'principal' ? 'Portafolio @josevera_22' : (item.collection === 'youtube' ? 'TV / Radio / Podcast' : (item.collection === 'seo' ? 'SEO Contenidos' : 'Cliente 2026'))}</span>
+              </div>
+              <div class="card-actions">
+                ${canPreview ? `
+                  <button class="card-btn preview" onclick="openModal('${item.id}', '${item.platform}', '${item.title.replace(/'/g, "\'")}', '${item.url}')">
+                    ▶ Vista Previa
+                  </button>
+                ` : `
+                  <a href="${item.url}" target="_blank" rel="noopener" class="card-btn preview">
+                    📄 Ver 9 Reels
+                  </a>
+                `}
+                <a href="${item.url}" target="_blank" rel="noopener" class="card-btn external">
+                  Abrir Original ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function openModal(id, platform, title, externalUrl) {
+      const modal = document.getElementById("video-modal");
+      const container = document.getElementById("modal-player-container");
+      document.getElementById("modal-title").textContent = title;
+      document.getElementById("modal-external-link").href = externalUrl;
+
+      let embedUrl = "";
+      if (platform === "youtube") {
+        embedUrl = `https://www.youtube.com/embed/${id}?autoplay=1`;
+      } else {
+        embedUrl = `https://drive.google.com/file/d/${id}/preview`;
+      }
+
+      container.innerHTML = `<iframe src="${embedUrl}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+      modal.classList.add("open");
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("video-modal");
+      const container = document.getElementById("modal-player-container");
+      container.innerHTML = "";
+      modal.classList.remove("open");
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target.id === "video-modal") {
+        closeModal();
+      }
+    }
+
+    function resetFilters() {
+      activeCollection = "all";
+      activeNiche = "all";
+      searchQuery = "";
+      document.getElementById("search-input").value = "";
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.toggle("active", b.dataset.collection === "all"));
+      document.querySelectorAll(".niche-pill").forEach(b => b.classList.toggle("active", b.dataset.niche === "all"));
+      renderGrid();
+    }
+
+    function togglePricingCards() {
+      const grid = document.getElementById("pricing-grid");
+      grid.style.display = grid.style.display === "none" ? "grid" : "none";
+    }
+
+    // Event Listeners
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeCollection = btn.dataset.collection;
+        renderGrid();
+      });
+    });
+
+    document.querySelectorAll(".niche-pill").forEach(pill => {
+      pill.addEventListener("click", () => {
+        document.querySelectorAll(".niche-pill").forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        activeNiche = pill.dataset.niche;
+        renderGrid();
+      });
+    });
+
+    document.getElementById("search-input").addEventListener("input", (e) => {
+      searchQuery = e.target.value;
+      renderGrid();
+    });
+
+    document.getElementById("sort-select").addEventListener("change", (e) => {
+      sortBy = e.target.value;
+      renderGrid();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    // Init
+    updateCounts();
+    renderGrid();
+  </script>
+</body>
+</html>
